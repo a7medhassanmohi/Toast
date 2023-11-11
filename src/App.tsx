@@ -1,14 +1,12 @@
 
 import styles from "./App.module.scss"
+import { ToastProvider } from "./Components"
 function App() {
 
   return (
-    <>
-    <div className="text-blue-600">
-      mohi
-
-    </div>
-    </>
+    <ToastProvider>
+    
+    </ToastProvider>
   )
 }
 
