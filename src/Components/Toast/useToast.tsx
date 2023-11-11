@@ -1,6 +1,7 @@
 import { FC, ReactNode, RefObject, createContext, useContext, useState } from "react";
 import { ToastContextType, ToastPositionType, ToastProps } from "./types";
 import clsx from "clsx";
+import { positionClasses } from "./utils";
 
 const ToastContext=createContext<ToastContextType>({
     add: () => {},
@@ -32,6 +33,7 @@ return(
    <ToastContext.Provider value={{add,remove,position}}>
       {children}
       <div className={clsx(
+        positionClasses[position],
         "fixed w-screen max-w-xs z-100"
       )}>
           {toasts.map((toast) => (
