@@ -38,7 +38,7 @@ return(
         "fixed w-screen max-w-xs z-100"
       )}>
           {toasts.map((toast) => (
-            <Toast key={toast.id}/>
+            <Toast key={toast.id} {...toast}/>
           ))}
       </div>
    </ToastContext.Provider>
