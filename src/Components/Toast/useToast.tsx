@@ -2,6 +2,7 @@ import { FC, ReactNode, RefObject, createContext, useContext, useState } from "r
 import { ToastContextType, ToastPositionType, ToastProps } from "./types";
 import clsx from "clsx";
 import { positionClasses } from "./utils";
+import Toast from "./Toast";
 
 const ToastContext=createContext<ToastContextType>({
     add: () => {},
@@ -37,7 +38,7 @@ return(
         "fixed w-screen max-w-xs z-100"
       )}>
           {toasts.map((toast) => (
-           <p key={toast.id}>1</p>
+            <Toast key={toast.id}/>
           ))}
       </div>
    </ToastContext.Provider>
