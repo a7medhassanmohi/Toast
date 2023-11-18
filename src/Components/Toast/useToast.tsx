@@ -23,6 +23,7 @@ export const ToastProvider:FC<{children:ReactNode}>=({children})=>{
         setToasts((toasts) => [...toasts, { ...toast, id: (Math.random() * 10000* Date.now()).toString() }]);
       };
       const remove = (toastId: string, ref: RefObject<HTMLDivElement>) => {
+        ref?.current?.classList.remove("animate-toastIn");
         ref?.current?.classList.add("animate-toastOut");
         //remove element after animation is done
         ref?.current?.addEventListener("animationend", () => {
@@ -30,6 +31,7 @@ export const ToastProvider:FC<{children:ReactNode}>=({children})=>{
           setToasts((toasts) => toasts.filter((toast) => toast.id !== toastId));
         });
       };
+      
 return(
    <ToastContext.Provider value={{add,remove,position}}>
       {children}
