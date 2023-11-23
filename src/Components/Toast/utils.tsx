@@ -9,7 +9,7 @@ export const positionClasses:Record<ToastPositionType,string>={
   bottomRight: "bottom-0 right-1",
 }
 export const closeButtonClasses =
-  "w-4 h-4 mx-3 items-center justify-center text-gray-400 dark:text-gray-200 hover:text-gray-900 rounded-md focus:ring-2 focus:ring-gray-300 inline-flex dark:hover:text-white";
+  " w-[5%] max-w-[5%] items-center dark:text-white hover:text-gray-900 $round10%ed-md focus:ring-2 focus:ring-gray-300  dark:hover:text-white";
 
 export const closeIcon = (
   <svg aria-hidden="true" viewBox="64 64 896 896" fill="currentColor">
@@ -17,16 +17,16 @@ export const closeIcon = (
   </svg>
 );
 export const wrapperClasses: Record<RequiredToastProps["type"], string> = {
-  info: "bg-blue-100 dark:bg-blue-800 dark:text-blue-100",
-  success: "bg-green-100 dark:bg-green-800 dark:text-green-100",
-  warning: "bg-orange-100 dark:bg-orange-800 dark:text-orange-100",
-  error: "bg-red-100 dark:bg-red-700 dark:text-red-100",
+  info: "bg-info dark:bg-info dark:text-blue-100  text-gray-200",
+  success: "bg-success dark:bg-success dark:text-green-100 text-gray-200",
+  warning: "bg-warning dark:bg-warning dark:text-orange-100 text-gray-200",
+  error: "bg-error dark:bg-error dark:text-red-100 text-gray-200",
 };
 export const iconClasses: Record<RequiredToastProps["type"], string> = {
-  info: "dark:bg-blue-100 bg-blue-500 text-white dark:text-blue-500",
-  success: "dark:bg-green-100 bg-green-500 text-white dark:text-green-500",
-  warning: "dark:bg-orange-100 bg-orange-500 text-white dark:text-orange-500",
-  error: "dark:bg-red-100 bg-red-500 text-white dark:text-red-500",
+  info: "dark:bg-white bg-white text-info dark:text-blue-500",
+  success: "dark:bg-white bg-white text-success dark:text-green-500",
+  warning: "dark:bg-white bg-white text-warning dark:text-orange-500",
+  error: "dark:bg-white bg-white text-error dark:text-red-500",
 };
 export const animationVariables: Record<ToastPositionType, string> = {
   topRight: "translateX(2000px)",

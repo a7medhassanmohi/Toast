@@ -55,13 +55,16 @@ const Toast = (props: Props) => {
       className={clsx(
         wrapperClasses[type],
         "animate-toastIn",
-        "flex justify-between items-center overflow-hidden rounded-md shadow-lg my-3 relative"
+        "flex justify-start items-center overflow-x-hidden overflow-y-auto rounded-md shadow-lg my-3 relative p-2"
       )}
       ref={wrapperRef}
       role={"alert"}
     >
          {!!duration && (
-        <div className="absolute bottom-0 right-0 left-0 w-full h-1 bg-neutral-100 dark:bg-neutral-500">
+        <div className={clsx(
+          "absolute bottom-0 right-0 left-0 w-full h-[5px] rounded-md ",
+          `bg-${type} dark:bg-${type}`
+        )}>
           <span
             className="absolute bg-neutral-200 left-0 top-0 bottom-0 h-full"
             style={{ width: `${progress}%` }}
@@ -69,14 +72,16 @@ const Toast = (props: Props) => {
         </div>
       )}
    {icon && (
-        <div className={clsx(iconClasses[type], "flex p-3")}>
-          <div className="inline-flex justify-center items-center w-6 h-6">
+        <div className={clsx(iconClasses[type], "flex p-2 rounded-full")}>
+          <div className="inline-flex justify-center items-center w-4 h-4">
             <span className="sr-only">{type} Icon</span>
             {icon}
           </div>
         </div>
       )}
-       <div className="text-sm font-semibold flex-grow p-3">{message}</div>
+      <div className='flex justify-between items-start flex-1 '>
+
+       <div className="text-sm font-semibold break-words w-[95%] max-w-[95%] p-3">{message}</div>
       <button
         aria-label="Close"
         onClick={() => {
@@ -87,6 +92,7 @@ const Toast = (props: Props) => {
         <span className="sr-only">Close</span>
         {closeIcon}
       </button>
+      </div>
     </div>
   )
 }

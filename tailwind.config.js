@@ -26,6 +26,12 @@ export default  {
           },
         },
       },
+      colors:{
+        info:"#3e98db",
+        success:"#6abe10",
+        warning:"#f1c40f",
+        error:"#e7513b",
+      }
     },
   },
   plugins: [],
