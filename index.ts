@@ -1,1 +1,1 @@
-export {useToast,ToastProvider} from "./src/Components/index"
+export {useToast,ToastProvider,useToastify} from "./src/Components/index"

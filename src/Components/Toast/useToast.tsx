@@ -10,6 +10,11 @@ const ToastContext=createContext<ToastContextType>({
     position: "topRight",
 })
 export const useToast = () => useContext(ToastContext);
+export const useToastify = () => {
+
+  const {add:addToast}=useContext(ToastContext)
+return{addToast}
+};
 export const ToastProvider:FC<{children:ReactNode}>=({children})=>{
     const [toasts, setToasts] = useState<ToastProps[]>([]);
     const [position, setPosition] = useState<ToastPositionType>("topRight");
