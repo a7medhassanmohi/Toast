@@ -2,9 +2,8 @@ import React from "react";
 import { useToast } from ".";
 import { positionClasses } from "./utils";
 
-type Props = {};
 
-export const PlayGround = (props: Props) => {
+export const PlayGround = () => {
   const { add } = useToast();
   function SubmitForm(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();

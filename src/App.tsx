@@ -1,11 +1,10 @@
 
-import styles from "./App.module.scss"
-import { ToastProvider,PlayGround } from "./Components"
+import { ToastProvider } from "./Components"
 function App() {
 
   return (
     <ToastProvider>
-    <PlayGround/>
+    {/* <PlayGround/> */}
     </ToastProvider>
   )
 }

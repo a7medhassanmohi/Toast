@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import  { useEffect, useRef, useState } from 'react'
 import { useToast } from "./useToast";
 import { ToastProps } from "./types";
 import { animationVariables, closeButtonClasses, closeIcon, getIcon, iconClasses, wrapperClasses } from './utils';
